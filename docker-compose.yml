@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  insurance-data-categorization:
+    environment:
+      - NODE_ENV=development
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    container_name: insurance-data-categorization
+    expose:
+      - '8081'
+    ports:
+      - '8081:8081'
+    command: npm run dev
